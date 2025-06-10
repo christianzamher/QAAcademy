@@ -10,6 +10,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import utils.PathUtils;
+
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +25,7 @@ public class RegistroTest {
     private WebDriver driver;
     //private String chromeDriverPath = "ruta/a/chromedriver"; // Actualizar con la ruta correcta
     private String chromeDriverPath = "c:/Users/ChristianZamora/Desktop/chromedriver-win64/chromedriver.exe";
-    private  String pathHtml = "C:/Users/ChristianZamora/IdeaProjects/QAAcademy/src/main/resources/TorneoHTML/";
+
 
     //Antes de Cada Test :
     @BeforeEach
@@ -63,7 +65,7 @@ public class RegistroTest {
             try {
                 System.out.println("Testeando usuario: " + usuario.getName() + " - " + usuario.getIgn());
 
-                driver.get(pathHtml + "registro.html");
+                driver.get(PathUtils.getHtmlPath("registro.html"));
 
                 driver.findElement(By.name("nombre")).sendKeys(usuario.getName());
                 driver.findElement(By.name("telefono")).sendKeys(usuario.getPhone());
