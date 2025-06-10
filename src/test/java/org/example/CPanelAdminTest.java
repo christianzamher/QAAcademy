@@ -3,6 +3,8 @@ package org.example;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,7 +16,7 @@ import java.time.format.DateTimeFormatter;
 
 import static org.junit.Assert.assertTrue;
 
-public class PanelAdminTest {
+public class CPanelAdminTest {
 
     private WebDriver driver;
 
@@ -56,6 +58,22 @@ public class PanelAdminTest {
         // 5. Clic en "Volver"
         WebElement volverBtn = driver.findElement(By.id("btnVolver"));
         volverBtn.click();
+
+        fechaInput.sendKeys(fechaHoy);
+        horaInput.sendKeys("18:30");
+        // Hacer clic en el botón Notificar Participantes
+        WebElement notificarBtn = driver.findElement(By.xpath("//button[text()='Notificar Participantes']"));
+        notificarBtn.click();
+
+        // Manejar el alert
+        Alert alert = driver.switchTo().alert();
+        String alertText = alert.getText();
+        System.out.println("Texto del popup: " + alertText);
+
+        Assertions.assertTrue(alertText.contains("guardado correctamente") || alertText.contains("Nombre del equipo"),
+                "El texto del popup no es el esperado: " + alertText);
+        Thread.sleep(2000);
+        alert.accept();
 
         // 6. Validar que estamos nuevamente en panel_admin.html
         assertTrue(driver.getCurrentUrl().contains("panel_admin.html"));

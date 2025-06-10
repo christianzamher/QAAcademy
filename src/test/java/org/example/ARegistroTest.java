@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -19,17 +18,17 @@ import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class RegistroTest {
+public class ARegistroTest {
 
     // Se declara el driver de Selenium
     private WebDriver driver;
-    //private String chromeDriverPath = "ruta/a/chromedriver"; // Actualizar con la ruta correcta
-    private String chromeDriverPath = "c:/Users/ChristianZamora/Desktop/chromedriver-win64/chromedriver.exe";
 
 
     //Antes de Cada Test :
     @BeforeEach
     public void setUp() {
+        //private String chromeDriverPath = "ruta/a/chromedriver"; // Actualizar con la ruta correcta
+        String chromeDriverPath = "c:/Users/ChristianZamora/Desktop/chromedriver-win64/chromedriver.exe";
         System.setProperty("webdriver.chrome.driver", chromeDriverPath);
         driver = new ChromeDriver();
     }

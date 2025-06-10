@@ -11,7 +11,7 @@ import java.time.Duration;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class NombreEquipoTest {
+public class BNombreEquipoTest {
 
     private WebDriver driver;
 
@@ -37,7 +37,7 @@ public class NombreEquipoTest {
 
             WebElement inputNombre = driver.findElement(By.name("nombre_equipo"));
             inputNombre.sendKeys("LosQA");
-
+            Thread.sleep(2000);
             WebElement botonGuardar = driver.findElement(By.xpath("//button[text()='Guardar Nombre']"));
             botonGuardar.click();
 

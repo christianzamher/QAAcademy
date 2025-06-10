@@ -18,7 +18,7 @@ public class EquiposTest {
     public void setUp() {
         System.setProperty("webdriver.chrome.driver", "C:/Users/ChristianZamora/Desktop/chromedriver-win64/chromedriver.exe");
         driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
 
     @AfterEach
@@ -44,11 +44,11 @@ public class EquiposTest {
         // Verificar el líder
         try {
             WebElement lider = driver.findElement(By.xpath("//div[@class='panel-heading']/p"));
-            String textoLider = lider.getText(); // Ej: "Líder: Andres"
+            String textoLider = lider.getText();
             if (textoLider.contains("Andres")) {
-                System.out.println("✔ Líder correcto: " + textoLider);
+                System.out.println(" na na na na " + textoLider);
             } else {
-                System.out.println("✘ Líder incorrecto: " + textoLider);
+                System.out.println(" Líder no coincide: " + textoLider);
                 fail("El líder no es el esperado.");
             }
         } catch (Exception e) {
@@ -67,13 +67,13 @@ public class EquiposTest {
         verificarRol(bodyText, "SOPORTE", "Manu");
     }
 
-    // Método auxiliar
+    // Verificador de Rol
     private void verificarRol(String bodyText, String rol, String jugador) {
         String expected = rol + ": " + jugador;
         if (bodyText.contains(expected)) {
-            System.out.println("✔ " + expected + " encontrado correctamente.");
+            System.out.println(" " + expected + " encontrado correctamente.");
         } else {
-            System.out.println("✘ Falta o incorrecto: " + expected);
+            System.out.println(" Falta o incorrecto: " + expected);
             fail("No se encontró el texto esperado: " + expected);
         }
     }

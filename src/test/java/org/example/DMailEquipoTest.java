@@ -7,7 +7,7 @@ import utils.PathUtils;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class MailEquipoTest {
+public class DMailEquipoTest {
 
     private WebDriver driver;
 
