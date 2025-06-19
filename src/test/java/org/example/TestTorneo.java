@@ -15,6 +15,7 @@ import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -200,7 +201,7 @@ public class TestTorneo {
         String alertText = alert.getText();
         System.out.println("Texto del popup: " + alertText);
 
-        Assertions.assertTrue(alertText.contains("guardado correctamente") || alertText.contains("Nombre del equipo"),
+        assertTrue(alertText.contains("guardado correctamente") || alertText.contains("Nombre del equipo"),
                 "El texto del popup no es el esperado: " + alertText);
         Thread.sleep(2000);
         alert.accept();
@@ -274,6 +275,7 @@ public class TestTorneo {
         verificarRol(bodyText, "ADC", "Ivan");
         verificarRol(bodyText, "SOPORTE", "Manu");
     }
+
 
 
 }
