@@ -22,7 +22,7 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class MainTest {
     private WebDriver driver;
-    private String chromeDriverPath = "/Users/martinlequerica/Documents/webdriver/chromedriver-mac-arm64/chromedriver";
+    private String chromeDriverPath = "c:/Users/ChristianZamora/Desktop/chromedriver-win64/chromedriver.exe";
 
     @BeforeEach
     public void setUp(){

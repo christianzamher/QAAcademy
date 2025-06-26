@@ -19,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class TestPagina {
     private WebDriver driver;
     //private String chromeDriverPath = "ruta/a/chromedriver"; // Actualizar con la ruta correcta
-    private String chromeDriverPath = "/Users/martinlequerica/Documents/webdriver/chromedriver-mac-arm64/chromedriver";
+    private String chromeDriverPath = "c:/Users/ChristianZamora/Desktop/chromedriver-win64/chromedriver.exe";
 
     @BeforeEach
     public void setUp() {
